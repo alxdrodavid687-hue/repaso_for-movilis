@@ -1,0 +1,152 @@
+:root {
+  --space-bg: #05070a;
+  --panel-bg: rgba(15, 23, 42, 0.8);
+  --neon-blue: #00f2ff;
+  --neon-purple: #bc13fe;
+  --text-white: #e2e8f0;
+  --gold-sun: #ffcc00;
+}
+
+body {
+  background-color: var(--space-bg);
+  background-image: radial-gradient(circle at center, #111827 0%, #05070a 100%);
+  color: var(--text-white);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Efecto de estrellas */
+.stars {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  z-index: -1;
+  opacity: 0.5;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo-text {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 4px;
+  font-size: 1.2rem;
+}
+
+.logo-accent { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+
+.accent { color: var(--neon-purple); text-shadow: 0 0 15px var(--neon-purple); }
+
+/* Panel de Control */
+.mission-control {
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.input-space {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn-launch {
+  background: var(--neon-blue);
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-launch:hover {
+  background: var(--text-white);
+  box-shadow: 0 0 20px var(--neon-blue);
+  transform: scale(1.05);
+}
+
+/* Tabla Galáctica */
+.display-panel {
+  width: 100%;
+  max-width: 600px;
+  background: var(--panel-bg);
+  border-radius: 20px;
+  border: 1px solid rgba(188, 19, 254, 0.3);
+  overflow: hidden;
+}
+
+.tabla-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(188, 19, 254, 0.2);
+  padding: 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  text-align: center;
+  border-bottom: 1px solid var(--neon-purple);
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.2s;
+}
+
+.fila:hover { background: rgba(0, 242, 255, 0.1); }
+
+.num { font-weight: bold; color: var(--text-white); }
+.op { color: var(--neon-purple); }
+.result { 
+  color: var(--neon-blue); 
+  font-family: 'Orbitron', sans-serif; 
+  font-weight: bold; 
+}
+
+/* Radar Animation para Placeholder */
+.radar {
+  width: 60px; height: 60px;
+  border: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  border-left-color: transparent;
+  animation: spin 2s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
